@@ -39,7 +39,7 @@ function ocuparTablero() {
     colocarPieza(filas[0].getElementsByTagName('td')[6], 'caballo', 'negro');
     colocarPieza(filas[0].getElementsByTagName('td')[7], 'torre', 'negro');
     for (var i = 0; i < 8; i++) {
-        colocarPieza(filas[1].getElementsByTagName('td')[i], 'peon', 'negro');
+        // colocarPieza(filas[1].getElementsByTagName('td')[i], 'peon', 'negro');
     }
     let celdas = tabla1.getElementsByTagName('td');
     for (let i = 0; i < celdas.length; i++) {
@@ -57,6 +57,9 @@ function colocarPieza(celda, pieza, color) {
     imagen.style.width = '100px';
     imagen.style.height = '100px';
     celda.appendChild(imagen);
+}
+function esValido(indiceFila, indiceColumna) {
+    return indiceFila >= 0 && indiceFila <= 7 && indiceColumna >= 0 && indiceColumna <= 7;
 }
 function moverPieza(celda) {
     let pieza = celda.getAttribute('data-pieza');
@@ -123,77 +126,26 @@ function moverPieza(celda) {
             resaltarCelda(filas[indiceFila + 1] && filas[indiceFila + 1].getElementsByTagName('td')[indiceColumna - 1]);
             resaltarCelda(filas[indiceFila - 1] && filas[indiceFila - 1].getElementsByTagName('td')[indiceColumna - 1]);
         } else if (pieza == 'caballo') {
-            if (indiceFila == 7) {
-                resaltarCelda(filas[indiceFila - 1].getElementsByTagName('td')[indiceColumna + 2]);
-                resaltarCelda(filas[indiceFila - 1].getElementsByTagName('td')[indiceColumna - 2]);
-                resaltarCelda(filas[indiceFila - 2].getElementsByTagName('td')[indiceColumna + 1]);
-                resaltarCelda(filas[indiceFila - 2].getElementsByTagName('td')[indiceColumna - 1]);
-            }
-            if (indiceFila == 6) {
-                resaltarCelda(filas[indiceFila - 1].getElementsByTagName('td')[indiceColumna + 2]);
-                resaltarCelda(filas[indiceFila - 1].getElementsByTagName('td')[indiceColumna - 2]);
-                resaltarCelda(filas[indiceFila - 2].getElementsByTagName('td')[indiceColumna + 1]);
-                resaltarCelda(filas[indiceFila - 2].getElementsByTagName('td')[indiceColumna - 1]);
-                resaltarCelda(filas[indiceFila + 1].getElementsByTagName('td')[indiceColumna - 2]);
-                resaltarCelda(filas[indiceFila + 1].getElementsByTagName('td')[indiceColumna + 2]);
-            }
-            if (indiceFila == 0) {
-                resaltarCelda(filas[indiceFila + 1].getElementsByTagName('td')[indiceColumna - 2]);
-                resaltarCelda(filas[indiceFila + 1].getElementsByTagName('td')[indiceColumna + 2]);
-                resaltarCelda(filas[indiceFila + 2].getElementsByTagName('td')[indiceColumna - 1]);
-                resaltarCelda(filas[indiceFila + 2].getElementsByTagName('td')[indiceColumna + 1]);
-            }
-            if (indiceFila == 1) {
-                resaltarCelda(filas[indiceFila + 1].getElementsByTagName('td')[indiceColumna - 2]);
-                resaltarCelda(filas[indiceFila + 1].getElementsByTagName('td')[indiceColumna + 2]);
-                resaltarCelda(filas[indiceFila + 2].getElementsByTagName('td')[indiceColumna - 1]);
-                resaltarCelda(filas[indiceFila + 2].getElementsByTagName('td')[indiceColumna + 1]);
-                resaltarCelda(filas[indiceFila - 1].getElementsByTagName('td')[indiceColumna + 2]);
-                resaltarCelda(filas[indiceFila - 1].getElementsByTagName('td')[indiceColumna - 2]);
-            }
-            if (indiceColumna == 7) {
-                resaltarCelda(filas[indiceFila + 2].getElementsByTagName('td')[indiceColumna - 1]);
-                resaltarCelda(filas[indiceFila - 2].getElementsByTagName('td')[indiceColumna - 1]);
-                resaltarCelda(filas[indiceFila + 1].getElementsByTagName('td')[indiceColumna - 2]);
-                resaltarCelda(filas[indiceFila - 1].getElementsByTagName('td')[indiceColumna - 2]);
-            }
-            if (indiceColumna == 6) {
-                resaltarCelda(filas[indiceFila + 2].getElementsByTagName('td')[indiceColumna - 1]);
-                resaltarCelda(filas[indiceFila - 2].getElementsByTagName('td')[indiceColumna - 1]);
-                resaltarCelda(filas[indiceFila + 1].getElementsByTagName('td')[indiceColumna - 2]);
-                resaltarCelda(filas[indiceFila - 1].getElementsByTagName('td')[indiceColumna - 2]);
-                resaltarCelda(filas[indiceFila - 2].getElementsByTagName('td')[indiceColumna + 1]);
-                resaltarCelda(filas[indiceFila + 2].getElementsByTagName('td')[indiceColumna + 1]);
-            }
-            if (indiceColumna == 0) {
-                resaltarCelda(filas[indiceFila - 2].getElementsByTagName('td')[indiceColumna + 1]);
-                resaltarCelda(filas[indiceFila + 2].getElementsByTagName('td')[indiceColumna + 1]);
-                resaltarCelda(filas[indiceFila - 1].getElementsByTagName('td')[indiceColumna + 2]);
-                resaltarCelda(filas[indiceFila + 1].getElementsByTagName('td')[indiceColumna + 2]);
-            }
-            if (indiceColumna == 1) {
-                resaltarCelda(filas[indiceFila - 2].getElementsByTagName('td')[indiceColumna + 1]);
-                resaltarCelda(filas[indiceFila + 2].getElementsByTagName('td')[indiceColumna + 1]);
-                resaltarCelda(filas[indiceFila - 1].getElementsByTagName('td')[indiceColumna + 2]);
-                resaltarCelda(filas[indiceFila + 1].getElementsByTagName('td')[indiceColumna + 2]);
-                resaltarCelda(filas[indiceFila + 2].getElementsByTagName('td')[indiceColumna - 1]);
-                resaltarCelda(filas[indiceFila - 2].getElementsByTagName('td')[indiceColumna - 1]);
-            }
-            if (indiceFila >= 2 && indiceFila <= 5 && indiceColumna >= 2 && indiceColumna <= 5) {
-                resaltarCelda(filas[indiceFila - 1].getElementsByTagName('td')[indiceColumna + 2]);
-                resaltarCelda(filas[indiceFila - 1].getElementsByTagName('td')[indiceColumna - 2]);
-                resaltarCelda(filas[indiceFila - 2].getElementsByTagName('td')[indiceColumna + 1]);
-                resaltarCelda(filas[indiceFila - 2].getElementsByTagName('td')[indiceColumna - 1]);
-                resaltarCelda(filas[indiceFila + 1].getElementsByTagName('td')[indiceColumna - 2]);
-                resaltarCelda(filas[indiceFila + 1].getElementsByTagName('td')[indiceColumna + 2]);
-                resaltarCelda(filas[indiceFila + 2].getElementsByTagName('td')[indiceColumna - 1]);
-                resaltarCelda(filas[indiceFila + 2].getElementsByTagName('td')[indiceColumna + 1]);
+            let movimientosCaballo = [
+                { df: -2, dc: -1 }, { df: -2, dc: 1 },
+                { df: -1, dc: -2 }, { df: -1, dc: 2 },
+                { df: 1, dc: -2 }, { df: 1, dc: 2 },
+                { df: 2, dc: -1 }, { df: 2, dc: 1 }
+            ];
+
+            for (let movimiento of movimientosCaballo) {
+                let nuevaFila = indiceFila + movimiento.df;
+                let nuevaColumna = indiceColumna + movimiento.dc;
+
+                if (esValido(nuevaFila, nuevaColumna)) {
+                    resaltarCelda(filas[nuevaFila].getElementsByTagName('td')[nuevaColumna]);
+                }
             }
         }
     }
 }
 function resaltarCelda(celda) {
-    if (celda) {
+    if (celda && !celda.hasAttribute('data-pieza')) {
         celda.style.backgroundColor = 'purple';
     }
 }

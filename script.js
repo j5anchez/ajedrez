@@ -129,11 +129,55 @@ function moverPieza(celda) {
                 resaltarCelda(filas[indiceFila - 2].getElementsByTagName('td')[indiceColumna + 1]);
                 resaltarCelda(filas[indiceFila - 2].getElementsByTagName('td')[indiceColumna - 1]);
             }
+            if (indiceFila == 6) {
+                resaltarCelda(filas[indiceFila - 1].getElementsByTagName('td')[indiceColumna + 2]);
+                resaltarCelda(filas[indiceFila - 1].getElementsByTagName('td')[indiceColumna - 2]);
+                resaltarCelda(filas[indiceFila - 2].getElementsByTagName('td')[indiceColumna + 1]);
+                resaltarCelda(filas[indiceFila - 2].getElementsByTagName('td')[indiceColumna - 1]);
+                resaltarCelda(filas[indiceFila + 1].getElementsByTagName('td')[indiceColumna - 2]);
+                resaltarCelda(filas[indiceFila + 1].getElementsByTagName('td')[indiceColumna + 2]);
+            }
             if (indiceFila == 0) {
                 resaltarCelda(filas[indiceFila + 1].getElementsByTagName('td')[indiceColumna - 2]);
                 resaltarCelda(filas[indiceFila + 1].getElementsByTagName('td')[indiceColumna + 2]);
                 resaltarCelda(filas[indiceFila + 2].getElementsByTagName('td')[indiceColumna - 1]);
                 resaltarCelda(filas[indiceFila + 2].getElementsByTagName('td')[indiceColumna + 1]);
+            }
+            if (indiceFila == 1) {
+                resaltarCelda(filas[indiceFila + 1].getElementsByTagName('td')[indiceColumna - 2]);
+                resaltarCelda(filas[indiceFila + 1].getElementsByTagName('td')[indiceColumna + 2]);
+                resaltarCelda(filas[indiceFila + 2].getElementsByTagName('td')[indiceColumna - 1]);
+                resaltarCelda(filas[indiceFila + 2].getElementsByTagName('td')[indiceColumna + 1]);
+                resaltarCelda(filas[indiceFila - 1].getElementsByTagName('td')[indiceColumna + 2]);
+                resaltarCelda(filas[indiceFila - 1].getElementsByTagName('td')[indiceColumna - 2]);
+            }
+            if (indiceColumna == 7) {
+                resaltarCelda(filas[indiceFila + 2].getElementsByTagName('td')[indiceColumna - 1]);
+                resaltarCelda(filas[indiceFila - 2].getElementsByTagName('td')[indiceColumna - 1]);
+                resaltarCelda(filas[indiceFila + 1].getElementsByTagName('td')[indiceColumna - 2]);
+                resaltarCelda(filas[indiceFila - 1].getElementsByTagName('td')[indiceColumna - 2]);
+            }
+            if (indiceColumna == 6) {
+                resaltarCelda(filas[indiceFila + 2].getElementsByTagName('td')[indiceColumna - 1]);
+                resaltarCelda(filas[indiceFila - 2].getElementsByTagName('td')[indiceColumna - 1]);
+                resaltarCelda(filas[indiceFila + 1].getElementsByTagName('td')[indiceColumna - 2]);
+                resaltarCelda(filas[indiceFila - 1].getElementsByTagName('td')[indiceColumna - 2]);
+                resaltarCelda(filas[indiceFila - 2].getElementsByTagName('td')[indiceColumna + 1]);
+                resaltarCelda(filas[indiceFila + 2].getElementsByTagName('td')[indiceColumna + 1]);
+            }
+            if (indiceColumna == 0) {
+                resaltarCelda(filas[indiceFila - 2].getElementsByTagName('td')[indiceColumna + 1]);
+                resaltarCelda(filas[indiceFila + 2].getElementsByTagName('td')[indiceColumna + 1]);
+                resaltarCelda(filas[indiceFila - 1].getElementsByTagName('td')[indiceColumna + 2]);
+                resaltarCelda(filas[indiceFila + 1].getElementsByTagName('td')[indiceColumna + 2]);
+            }
+            if (indiceColumna == 1) {
+                resaltarCelda(filas[indiceFila - 2].getElementsByTagName('td')[indiceColumna + 1]);
+                resaltarCelda(filas[indiceFila + 2].getElementsByTagName('td')[indiceColumna + 1]);
+                resaltarCelda(filas[indiceFila - 1].getElementsByTagName('td')[indiceColumna + 2]);
+                resaltarCelda(filas[indiceFila + 1].getElementsByTagName('td')[indiceColumna + 2]);
+                resaltarCelda(filas[indiceFila + 2].getElementsByTagName('td')[indiceColumna - 1]);
+                resaltarCelda(filas[indiceFila - 2].getElementsByTagName('td')[indiceColumna - 1]);
             }
             if (indiceFila >= 2 && indiceFila <= 5 && indiceColumna >= 2 && indiceColumna <= 5) {
                 resaltarCelda(filas[indiceFila - 1].getElementsByTagName('td')[indiceColumna + 2]);

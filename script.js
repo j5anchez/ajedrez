@@ -26,7 +26,6 @@ function ocuparTablero() {
     colocarPieza(filas[7].getElementsByTagName('td')[4], 'rey', 'blanco');
     colocarPieza(filas[7].getElementsByTagName('td')[5], 'alfil', 'blanco');
     colocarPieza(filas[7].getElementsByTagName('td')[6], 'caballo', 'blanco');
-    // colocarPieza(filas[4].getElementsByTagName('td')[6], 'caballo', 'blanco');
     colocarPieza(filas[7].getElementsByTagName('td')[7], 'torre', 'blanco');
     for (var i = 0; i < 8; i++) {
         colocarPieza(filas[6].getElementsByTagName('td')[i], 'peon', 'blanco');
@@ -124,7 +123,6 @@ function moverPieza(celda) {
             resaltarCelda(filas[indiceFila + 1] && filas[indiceFila + 1].getElementsByTagName('td')[indiceColumna - 1]);
             resaltarCelda(filas[indiceFila - 1] && filas[indiceFila - 1].getElementsByTagName('td')[indiceColumna - 1]);
         } else if (pieza == 'caballo') {
-
             if (indiceFila == 7) {
                 resaltarCelda(filas[indiceFila - 1].getElementsByTagName('td')[indiceColumna + 2]);
                 resaltarCelda(filas[indiceFila - 1].getElementsByTagName('td')[indiceColumna - 2]);

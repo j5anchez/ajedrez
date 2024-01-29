@@ -1,0 +1,27 @@
+.tableroAjedrez {
+    border-spacing: 0;
+    border-collapse: collapse;
+    border: 4px solid #333333;
+    /* Añadir un borde de 4px sólido */
+    margin: 20px auto;
+    /* Centrar el tablero con un espacio alrededor */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    /* Sombra para dar un efecto elevado */
+}
+
+.tableroAjedrez td {
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 48px;
+}
+
+
+.seraNegra {
+    background-color: #000000;
+}
+
+.seraBlanca {
+    background-color: #ffffff;
+}
